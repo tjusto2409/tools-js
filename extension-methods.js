@@ -304,7 +304,4 @@
       }
     }
   });    
-
-
-  console.log("amor da minha vida".isTypeOf(String))
 }());
