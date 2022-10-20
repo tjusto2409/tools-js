@@ -1,5 +1,17 @@
 (function() {
+  Object.defineProperties(String.prototype, {
+    getType: {
+      get: function() {
+        return String.name;
+      }
+    }
+  });
   Object.defineProperties(Array.prototype, {
+    getType: {
+      get: function() {
+        return Array.name;
+      }
+    },
     first: {
       get: function() {
         return this[0];
@@ -212,8 +224,34 @@
       }
     }
   });
+
+  Object.defineProperties(Function.prototype, {
+    getType: {
+      get: function() {
+        return Function.name;
+      }
+    },
+  });
   
   Object.defineProperties(Object.prototype, {
+    getType: {
+      get: function() {
+        return Object.name;
+      }
+    },
+    isTypeOf: {
+      value: function(type) {
+        if(type.name !== String.name 
+            && type.name !== Number.name 
+            && type.name !== Function.name 
+            && type.name !== Array.name
+            && type.name !== Object.name)
+          throw Error("Type entered isn't accepted");
+
+        console.log(String.name,Number.name,Function.name, Array.name,Object.name)
+        return this.getType === type.name;
+      }
+    },
     size: {
       get: function() {
         return Object.keys(this).length;
@@ -254,7 +292,7 @@
 
         console.warn("Property '" + key + "' already exist!");
       }
-    }
+    },
   });
 
   Object.defineProperties(Window.prototype, {
@@ -266,4 +304,7 @@
       }
     }
   });    
+
+
+  console.log("amor da minha vida".isTypeOf(String))
 }());
