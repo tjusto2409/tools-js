@@ -246,7 +246,7 @@
     /*
       Return average value 
       var array = [2,5,8,10];
-      array.findMax(); // Output: 10
+      array.findAvg(); // Output: 6.25
     */
     findAvg: {
         value: function() {
