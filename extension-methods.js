@@ -236,13 +236,23 @@
     /*
       Return max value 
       var array = [2,5,8,10];
-      array.findMin(); // Output: 10
+      array.findMax(); // Output: 10
     */
     findMax: {
       value: function() {
         return Math.max.apply(null, this);
       }
-    }
+    },
+    /*
+      Return average value 
+      var array = [2,5,8,10];
+      array.findMax(); // Output: 10
+    */
+    findAvg: {
+        value: function() {
+          return this.sum() / this.length;
+        }
+      }
   });
 
   Object.defineProperties(Function.prototype, {
