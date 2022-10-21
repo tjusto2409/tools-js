@@ -222,6 +222,26 @@
           }
         }
       }
+    },
+    /*
+      Return min value 
+      var array = [2,5,8,10];
+      array.findMin(); // Output: 2
+    */ 
+    findMin: {
+      value: function() {
+        return Math.min.apply(null, this);
+      }
+    },
+    /*
+      Return max value 
+      var array = [2,5,8,10];
+      array.findMin(); // Output: 10
+    */
+    findMax: {
+      value: function() {
+        return Math.max.apply(null, this);
+      }
     }
   });
 
@@ -303,5 +323,5 @@
         });
       }
     }
-  });    
+  });
 }());
